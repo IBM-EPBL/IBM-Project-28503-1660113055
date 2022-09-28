@@ -1,0 +1,15 @@
+#this is HTML
+<html>
+<head>
+<title>methods in JS</title>
+<script type="text/javascript" src="new.js"></script>
+<body>
+
+</body>
+</head>
+</html>
+
+#this is in js
+alert('Hi')
+console.log()
+prompt('Enter your Number')
