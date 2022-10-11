@@ -1,0 +1,68 @@
+# Importing flask module in the project is mandatory
+# An object of Flask class is our WSGI application.
+#fromflask importFlask
+ 
+# Flask constructor takes the name of
+# current module (__name__) as argument.
+app =Flask(__name__)
+ 
+# The route() function of the Flask class is a decorator,
+# which tells the application which URL should call
+# the associated function.
+
+@app.route('/')
+# ‘/’ URL is bound with hello_world() function.
+defhello_world():
+    return'Hello World'
+ 
+# main driver function
+if__name__ =='__main__':
+ 
+    # run() method of Flask class runs the application
+    # on the local development server.
+    app.run()
+
+def gfg():
+   return ‘geeksforgeeks’
+app.add_url_rule(‘/’, ‘g2g’, gfg)
+
+fromflask importFlask
+app =Flask(__name__)
+ 
+@app.route('/hello/<name>')
+defhello_name(name):
+   return'Hello %s!'%name
+ 
+if__name__ =='__main__':
+   app.run()
+
+<html>
+   <body>     
+      <formaction= "http://localhost:5000/login"method= "post">
+ <p>Enter Name:</p>
+ <p><inputtype= "text"name= "nm"/></p>
+ <p><inputtype= "submit"value= "submit"/></p>
+  </form>     
+   </body>
+</html>
+
+fromflask importFlask, redirect, url_for, request
+app =Flask(__name__)
+ 
+@app.route('/success/<name>')
+defsuccess(name):
+    return'welcome %s'%name
+
+ @app.route('/login', methods=['POST', 'GET'])
+deflogin():
+    ifrequest.method =='POST':
+        user =request.form['nm']
+        returnredirect(url_for('success', name=user))
+    else:
+        user =request.args.get('nm')
+        returnredirect(url_for('success', name=user))
+
+ if__name__ =='__main__':
+    app.run(debug=True)
+
+
